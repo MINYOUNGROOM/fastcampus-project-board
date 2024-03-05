@@ -15,17 +15,17 @@ public class Article {
 
     private Long id;
 
-    private String title;
+    private String title; // 제목
 
-    private String content;
+    private String content; // 본문
 
-    private String hashtag;
+    private String hashtag; // 해시태그
 
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt; // 생성일시
 
-    private  String createdBy;
+    private  String createdBy; // 생성자
 
-    private LocalDateTime modifiedAt;
+    private LocalDateTime modifiedAt; // 수정일시
 
-    private String modifiedBy;
+    private String modifiedBy; // 수정자
 }
