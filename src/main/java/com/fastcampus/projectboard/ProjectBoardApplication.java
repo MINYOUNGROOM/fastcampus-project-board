@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-class FastCampusProjectBoardApplication {
+class ProjectBoardApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FastCampusProjectBoardApplication.class, args);
+		SpringApplication.run(ProjectBoardApplication.class, args);
 	}
 
 }
