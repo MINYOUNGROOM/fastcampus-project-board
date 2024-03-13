@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.context.annotation.Primary;
+import org.springframework.boot.actuate.audit.listener.AuditListener;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -23,8 +23,10 @@ import java.util.Set;
         @Index(columnList = "createAt"),
         @Index(columnList = "createdBy")
 })
+
+
 @Entity
-public class Article {
+public class Article extends CommonFields{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,17 +51,6 @@ public class Article {
     private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
 
 
-    @CreatedDate @Column(nullable = false, name="createAt")
-    private LocalDateTime createdAt; // 생성일시
-
-    @CreatedBy @Column(nullable = false, length = 100)
-    private String createdBy; // 생성자
-
-    @LastModifiedDate @Column(nullable = false)
-    private LocalDateTime modifiedAt; // 수정일시
-
-    @LastModifiedBy @Column(nullable = false, length = 100)
-    private String modifiedBy; // 수정자
 
 
     protected Article() {}

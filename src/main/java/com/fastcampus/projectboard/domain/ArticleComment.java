@@ -20,7 +20,7 @@ import java.util.Objects;
         @Index(columnList = "createdBy")
 })
 @Entity
-public class ArticleComment {
+public class ArticleComment extends CommonFields{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
