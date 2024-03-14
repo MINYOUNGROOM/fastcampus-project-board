@@ -4,13 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.boot.actuate.audit.listener.AuditListener;
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
 
-import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -33,7 +27,6 @@ public class Article extends CommonFields{
     private Long id;
 
 
-
     @Setter @Column(nullable = false)
     private String title; // 제목
 
@@ -47,7 +40,7 @@ public class Article extends CommonFields{
 
     @ToString.Exclude
     @OrderBy("id")
-    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL) // article id 하나에 OneToMany로 답글 연결
     private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
 
 
