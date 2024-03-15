@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 
 import java.util.Objects;
@@ -15,6 +16,8 @@ import java.util.Objects;
         @Index(columnList = "createAt"),
         @Index(columnList = "createdBy")
 })
+
+
 @Entity
 public class ArticleComment extends CommonFields{
 
